@@ -19,7 +19,6 @@ class Product:
     '''
 
     def add_new_product(self):
-        global product_dict
         product_dict = self.product_dict
         product = input("Product Name: ").upper()
         product_dict[product]=dict()
@@ -27,16 +26,17 @@ class Product:
         product_dict[product]["offer"] = bool(int(input("Any offers?\nIf yes press 1, otherwise press 0: ")))
         if product_dict[product]["offer"]:
             product_dict[product]["offer_quantity"] = int(input("Discount eligible purchase quantity: "))
-            product_dict[product]["offer_price"] = int(input("Discount amount for products: "))
+            product_dict[product]["offer_price"] = int(input("Discount amount: "))
         else:
             product_dict[product]["offer_quantity"] = 0
             product_dict[product]["offer_price"] = 0
-        return product_dict
+
+        self.product_dict=product_dict
+        return self.product_dict
         
 
 
     def delete_product(self):
-        global product_dict
         product_dict = self.product_dict
         key = input("Enter the product you want to delete: ").upper()
         if key in product_dict.keys():
@@ -46,14 +46,12 @@ class Product:
                 print("Product deleted.")
         else:
             print("Product not found! check if you entered correct name.")
-        return product_dict
+        self.product_dict=product_dict
+        return self.product_dict
 
 
     def reset_product_list(self):
-        global product_dict
-        product_dict = self.product_dict
-        product_dict.clear()
-        return product_dict
+        return self.product_dict.clear()
 
 
     def view_product_list(self):
