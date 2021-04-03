@@ -1,5 +1,5 @@
 import unittest
-from balanced_bracket import check
+from balanced_brackets import check
 
 
 class Test(unittest.TestCase):
