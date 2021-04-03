@@ -11,19 +11,19 @@ def check(myStr):
             if ((len(stack)>0) and (open_list[pos] == stack[len(stack)-1])):
                 stack.pop()
             else:
-                return "Unbalanced"
+                return False
     
     if len(stack) == 0:
-        return "Balanced"
+        return True
     else:
-        return "Unbalanced"
+        return False
         
 
-string = '{[]{()}}'
-print(check(string))
+# string = '{[]{()}}'
+# print(check(string))
 
-string = '[{}{})(]'
-print(check(string))
+# string = '[{}{})(]'
+# print(check(string))
 
-string = '((()'
-print(check(string))
+# string = '((()'
+# print(check(string))
