@@ -19,9 +19,7 @@ Checkout is a child class of Product.
 Offer is an imported class of offers module
 
         ** methods imported from Offer class **
-                remove_offer()
-                view_offers()
-                new_offer()
+                remove_offer(), view_offers(), new_offer()
 
 '''
 
